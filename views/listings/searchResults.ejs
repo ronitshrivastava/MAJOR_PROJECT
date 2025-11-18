@@ -1,0 +1,23 @@
+<%- layout("/layouts/boilerplate")%>
+
+<div class="container mt-4">
+    <h2 style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search results for "<%= query %>"</h2>
+
+    <% if (listings.length === 0) { %>
+        <p>No destinations found.</p>
+    <% } %>
+    <div class="row mt-4">
+        <% listings.forEach(listing => { %>
+            <div class="col-md-4">
+            <div class="col-6 offset-3 show-card listing-card">
+                <img src="<%= listing.image.url %>" class="card-img-top show-img" alt="">
+                <div class="card-body">
+                    <h5 class="card-title"><%= listing.title %></h5>
+                    <p class="card-text"><%= listing.location %></p>
+                    <a href="/listings/<%= listing._id %>" class="btn btn-dark add-btn mb-3 ">View</a>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</div>
