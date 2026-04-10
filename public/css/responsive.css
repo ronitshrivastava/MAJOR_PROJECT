@@ -10,6 +10,10 @@ body {
   overflow-x: hidden;
 }
 
+body {
+  padding-bottom: 80px;
+}
+
 img,
 video,
 iframe {
@@ -80,15 +84,39 @@ form[role="search"] input,
   width: 100%;
 }
 
-/* ========== Filters / Categories (if present) ========== */
+/* ========== Filters / Categories ========== */
 #filters,
 .filters,
-.tax-toggle,
 .category-strip {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
   gap: 0.75rem;
   align-items: center;
+  padding: 0.5rem 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+#filters::-webkit-scrollbar,
+.filters::-webkit-scrollbar,
+.category-strip::-webkit-scrollbar {
+  display: none;
+}
+
+#filters > *,
+.filters > *,
+.category-strip > * {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.tax-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: nowrap;
 }
 
 /* ========== Listing Cards ========== */
@@ -141,7 +169,7 @@ form[role="search"] input,
   flex: 1 1 auto;
 }
 
-/* ========== Forms (New/Edit/Login/Signup/Review) ========== */
+/* ========== Forms ========== */
 form {
   width: 100%;
 }
@@ -222,6 +250,39 @@ textarea {
   margin-right: 0;
 }
 
+/* ========== Bottom Mobile Nav ========== */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.6rem 0;
+  z-index: 1000;
+}
+
+.bottom-nav a,
+.bottom-nav button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  font-size: 0.75rem;
+  background: none;
+  border: none;
+}
+
+.bottom-nav i {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
 /* ========== Utility Fixes ========== */
 .table-responsive {
   overflow-x: auto;
@@ -260,6 +321,7 @@ textarea {
 @media (max-width: 768px) {
   body {
     font-size: 0.97rem;
+    padding-bottom: 85px;
   }
 
   .container,
@@ -324,6 +386,7 @@ textarea {
 @media (max-width: 576px) {
   body {
     font-size: 0.95rem;
+    padding-bottom: 85px;
   }
 
   .container,
@@ -390,5 +453,16 @@ textarea {
 
   #map {
     height: 220px;
+  }
+}
+
+/* ========== Desktop / Mobile visibility for bottom nav ========== */
+@media (min-width: 769px) {
+  body {
+    padding-bottom: 0;
+  }
+
+  .bottom-nav {
+    display: none;
   }
 }
