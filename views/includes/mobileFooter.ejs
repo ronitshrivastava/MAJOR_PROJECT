@@ -1,0 +1,27 @@
+<div class="mobile-footer">
+    <a href="/listings" class="footer-item">
+        <i class="fa-regular fa-compass"></i>
+        <span>Explore</span>
+    </a>
+
+    <a href="/listings/new" class="footer-item">
+        <i class="fa-solid fa-house"></i>
+        <span>Host</span>
+    </a>
+
+    <% if(!currUser) { %>
+        <a href="/signup" class="footer-item">
+            <i class="fa-regular fa-user"></i>
+            <span>Sign up</span>
+        </a> 
+        <a href="/login" class="footer-item">
+            <i class="fa-solid fa-right-to-bracket"></i>
+            <span>Log in</span>
+        </a>
+    <% } else { %>
+        <a href="/logout" class="footer-item">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </a>
+    <% } %>
+</div>
