@@ -98,6 +98,11 @@ app.use((req,res,next)=>{
 //   res.send(registeredUser);
 // })
 
+app.use((req, res, next) => {
+    res.locals.currentPath = req.path;
+    next();
+});
+
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);

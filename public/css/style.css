@@ -14,7 +14,7 @@ body{
     background-color: white;
 }
 
-.fa-compass{
+.navbar-brand .fa-compass {
     color: #fe424d;
     font-size: 2rem;
 }

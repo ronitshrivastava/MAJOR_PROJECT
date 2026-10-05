@@ -352,3 +352,16 @@
         padding-bottom: 70px;
     }
 }
+
+
+.mobile-footer .footer-item {
+    color: #222 !important;
+}
+
+.mobile-footer .footer-item:hover {
+    color: #fe424d !important;
+}
+
+.mobile-footer .footer-item.active {
+    color: #fe424d !important;
+}

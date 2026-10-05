@@ -1,27 +1,34 @@
 <div class="mobile-footer">
-    <a href="/listings" class="footer-item">
+
+    <a href="/listings" class="footer-item <%= currentPath === '/listings' ? 'active' : '' %>">
         <i class="fa-regular fa-compass"></i>
         <span>Explore</span>
     </a>
 
-    <a href="/listings/new" class="footer-item">
+    <a href="/listings/new" class="footer-item <%= currentPath === '/listings/new' ? 'active' : '' %>">
         <i class="fa-solid fa-house"></i>
         <span>Host</span>
     </a>
 
     <% if(!currUser) { %>
-        <a href="/signup" class="footer-item">
+
+        <a href="/signup" class="footer-item <%= currentPath === '/signup' ? 'active' : '' %>">
             <i class="fa-regular fa-user"></i>
             <span>Sign up</span>
-        </a> 
-        <a href="/login" class="footer-item">
+        </a>
+
+        <a href="/login" class="footer-item <%= currentPath === '/login' ? 'active' : '' %>">
             <i class="fa-solid fa-right-to-bracket"></i>
             <span>Log in</span>
         </a>
+
     <% } else { %>
+
         <a href="/logout" class="footer-item">
             <i class="fa-solid fa-right-from-bracket"></i>
             <span>Logout</span>
         </a>
+
     <% } %>
+
 </div>
